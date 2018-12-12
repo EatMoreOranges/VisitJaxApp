@@ -21,7 +21,7 @@ public class JagActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_jag);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         myAdapter = new SlideAdapter(this);
         //       viewPager.setAdapter(myAdapter);
@@ -38,7 +38,7 @@ public class JagActivity extends AppCompatActivity {
                 // close drawer when item is tapped
                 mDrawerLayout.closeDrawers();
 
-                // add code here
+                // add code here for drawer links
 
                 Button home = findViewById(R.id.homePage);
                 home.setOnClickListener(new View.OnClickListener(){
@@ -50,6 +50,23 @@ public class JagActivity extends AppCompatActivity {
                         toHome();
                     }
                 });
+                //jax beach button
+                Button beach = findViewById(R.id.beach);
+                beach.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v) {
+                        //step 3
+                        //what do you want to do when the button is clicked?
+                        // call function to change activity
+                        toBeach();
+                    }
+                });
+
+
+
+
+
+
                 return true;
             }
         });
@@ -65,6 +82,18 @@ public class JagActivity extends AppCompatActivity {
         startActivity(a);
 
     }
+
+    private void toBeach(){
+        //step 4
+        //create an intent for the next activity
+        Intent a = new Intent(this,BeachActivity.class);
+
+        //step 5
+        //start the intent you just made
+        startActivity(a);
+
+    }
+
 
 
 }
